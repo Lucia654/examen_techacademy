@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //OBJETO PERSONA
+function Persona(nombre, edad, calificación){
+    this.nombre=  nombre;
+    this.edad=    edad;
+    this.calificación=  calificación;
+    this.metodo1= function obtDetalles(){
+      document.write("Nombre: " + this.nombre + "<br>" + 
+                     "Edad: " + this.edad + "<br>" + 
+                     "Calificación: " + Math.floor(Math.random()*10) + "<br>");
+    }; 
+  }
+    var ficha1 = new Persona("Ana","17","8");
+      ficha1.metodo1();
+
+    var ficha2 = new Persona("Ramon","18","6");
+      ficha2.metodo1();
+
+    var ficha3 = new Persona("Lisa","17","6");
+      ficha3.metodo1();
+
+    var ficha4 = new Persona("Jaime","20","5");
+      ficha4.metodo1();
+
+    var ficha5 = new Persona("David","30","9");
+      ficha5.metodo1();
+    
+    var ficha6 = new Persona("Angela","16","7");
+      ficha6.metodo1();
+
+      
+  //OBJETO ESTUDIANTE
+  function Estudiante(curso, grupo){
+    this.curso=   curso;
+    this.grupo=   grupo;
+    this.metodo2= function registrar(){
+        document.write("Curso: " + this.curso + "<br>" + 
+                       "Grupo: " + this.grupo + "<br>");
+    };
+  }
+    var ficha2 = new Estudiante("Algebra","Trigonometría");
+      ficha2.metodo2();
+  
+  //OBJETO PROFESOR
+  function Profesor(asignatura, nivel){
+    this.asignatura=  asignatura;
+    this.nivel=       nivel;
+    this.metodo3=     function asignar(){
+        document.write("Asignatura: " + this.asignatura + "<br>" + 
+                       "Nivel: " + this.nivel+ "<br>");
+    };
+  }
+    var ficha3 = new Profesor("Cálculo","Básico");
+      ficha3.metodo3();
+  
+  /* ------------------------------------------------------------ */
+  
+  function Grupo(Profesor, Calificación, Estudiante){
+    this.profesor =  profesor;
+    this.calificación = calificación;
+    this.estudiantes = estudiante;
+    this.metodo4=     function asignar(){
+        document.write("Profesor: " + this.profesor + "<br>" +
+            "Calificación: " + this.calificación + "<br>" + "Estudiante: " + this.estudiante
+            + "<br>");
+    };
+}
+
+    var arreglo = [
+      {
+        nombre: "Ana",
+       calificación: 8
+      },
+      {
+        nombre: "Ramon",
+        calificación: 6
+      },
+      {
+        nombre: "Lisa",
+        calificación: 6
+      },
+      {
+        nombre: "Jaime",
+        calificación: 5
+      },
+      {
+        nombre: "David",
+        calificación: 9
+      },
+      {
+        nombre: "Angela",
+        calificación: 7
+      }
+    ];
+    
+      var sumatoriaObjeto = arreglo.reduce(function(acumulador, siguienteValor){
+        return {
+          calificación: acumulador.calificación + siguienteValor.calificación
+        };
+      }, {calificación: 0}); 
+      
+      var promediocalificación = sumatoriaObjeto.edad / arreglo.length;
+
+    </script>
+</body>
+</html>
