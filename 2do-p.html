@@ -10,15 +10,14 @@
     <script>
         // script que calcula el factorial de un número entero
 
-        var num = parseInt(prompt(`digite número para factorizar `));
-        function factorial (n) {
-	var total = 1; 
-	for (i=1; i<=n; i++) {
-		total = total * i;
-        console.log(total);
-	}
-	return total; 
-}
+        var numero = prompt("Escriba un número, para calcular su factorial ");
+        var resultado = 1;
+
+        for(var i=1; i<=numero; i++) {
+          resultado *= i;
+        }
+        
+        alert(resultado);
 
     </script>
 </body>
